@@ -18,13 +18,20 @@ public:
 
   ~SharedMemory() = default;
 
-  // I will need to add read and write function
+  void write(){
 
+  }
+  // I will need to add read and write function
+  void read(){
+
+  }
+
+  std::string& name() {return _name;}
 
 private:
   std::string _name;
   boost::interprocess::shared_memory_object _shm;
-  boost::interprocess::mapped_region _shm;
+  boost::interprocess::mapped_region _mapped_region;
   bool _owner = false;
 
 };
