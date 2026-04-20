@@ -12,3 +12,8 @@ struct Person{
   std::array<int, 2> height;
   float weight;
 };
+
+struct Position{
+  int x;
+  int y;
+};
