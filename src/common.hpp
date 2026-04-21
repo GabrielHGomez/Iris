@@ -37,6 +37,9 @@ public:
 
   std::string& name() {return _name;}
 
+  T* operator->(){ return static_cast<T*>(_mapped_region.get_address());}
+  T& operator*(){ return *(static_cast<T*>(_mapped_region.get_address()));}
+
 private:
   std::string _name;
   boost::interprocess::shared_memory_object _shm;

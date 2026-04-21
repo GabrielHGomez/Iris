@@ -7,7 +7,7 @@ struct Coordinates{
 };
 
 struct Person{
-  std::string name;
+  char name[32];
   int age;
   std::array<int, 2> height;
   float weight;
