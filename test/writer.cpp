@@ -4,8 +4,6 @@
 #include "test_structs.hpp"
 
 int main(){
-  std::cout << "hello world, writer" << std::endl;
-
   SharedMemory<Position> shm("Position_info", true);
   SharedMemory<Person> person_shm("Person_info", true);
 

@@ -22,6 +22,7 @@ In another terminal:
 
 ## Roadmap
 - [ ] Add synchronization
-- [ ] Add Unit Test
+- [x] Add Unit Test
 - [ ] Build Better Examples
 - [ ] Build up the header more
+- [ ] Add Clang-format

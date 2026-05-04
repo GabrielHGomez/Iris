@@ -27,14 +27,6 @@ public:
     }
   }
 
-  void write(){
-
-  }
-  // I will need to add read and write function
-  void read(){
-
-  }
-
   std::string& name() {return _name;}
 
   T* operator->(){ return static_cast<T*>(_mapped_region.get_address());}
