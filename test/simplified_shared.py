@@ -6,8 +6,6 @@ import time
 FORMAT = "<32s i 2i f"   
 SIZE = struct.calcsize(FORMAT)
 
-name = sys.argv[1] if len(sys.argv) > 1 else "person"
-
 with open(f"/dev/shm/Person_info", "rb") as f:
     with mmap.mmap(f.fileno(), SIZE, prot=mmap.PROT_READ) as mm:
         while True:
