@@ -1,9 +1,23 @@
 #include <iostream>
+#include <csignal>
+#include <atomic>
+#include <chrono>
+#include <thread>
+
+std::atomic<bool> running{true};
+void handle_signal(int)
+{
+  running = false;
+}
 
 #include "../src/common.hpp"
 #include "test_structs.hpp"
 
 int main(){
+
+  std::signal(SIGINT,handle_signal);
+  std::signal(SIGTERM, handle_signal);
+
   SharedMemory<Position> shm("Position_info", true);
   SharedMemory<Person> person_shm("Person_info", true);
 
@@ -14,8 +28,9 @@ int main(){
   person_shm->weight = 225.5;
   person_shm->height = {5,11};
   std::snprintf(person_shm->name, sizeof(person_shm->name), "%s", "Billy");
-  while(true){
 
+  while(running){
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
   }
   return 0;
 }
