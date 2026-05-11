@@ -17,3 +17,7 @@ struct Position{
   int x;
   int y;
 };
+
+struct Random{
+  volatile int random_val;
+};
